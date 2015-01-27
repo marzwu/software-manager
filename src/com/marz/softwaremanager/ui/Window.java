@@ -14,6 +14,17 @@ public class Window {
 		shell.setText("hello world");
 		shell.open();
 
+		createButton(shell);
+		
+		while(!shell.isDisposed()){
+			if(display.readAndDispatch() == false){
+				display.sleep();
+			}
+		}
+		shell.dispose();
+	}
+
+	private void createButton(Shell shell) {
 		Button btn = new Button(shell, SWT.PUSH);
 		btn.setText("btn");
 		btn.setSize(60, 32);
@@ -30,12 +41,5 @@ public class Window {
 				System.out.println("default handler");
 			}
 		});
-		
-		while(!shell.isDisposed()){
-			if(display.readAndDispatch() == false){
-				display.sleep();
-			}
-		}
-		shell.dispose();
 	}
 }
