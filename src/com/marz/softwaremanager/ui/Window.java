@@ -15,6 +15,9 @@ public class Window {
 		shell.open();
 
 		createButton(shell);
+		createList(shell);
+		
+		IndexActivity index = new IndexActivity(shell);
 		
 		while(!shell.isDisposed()){
 			if(display.readAndDispatch() == false){
@@ -22,6 +25,11 @@ public class Window {
 			}
 		}
 		shell.dispose();
+	}
+
+	private void createList(Shell shell) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	private void createButton(Shell shell) {
